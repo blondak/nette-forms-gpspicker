@@ -15,7 +15,7 @@ New BSD
 
 ##### Dependencies
 
-Nette 2.0.0
+Nette 2.4.x
 
 ##### Demo
 
@@ -166,7 +166,7 @@ If you are afraid of exhausting API rate limit of Google Maps, you can use alter
 
 ```php
 $form->addGpsPicker('coords', 'Coordinates:')
-	->setDriver(Gps::DRIVER_SEZNAM);
+	->setDriver(GpsPicker::DRIVER_SEZNAM);
 ```
 
 Available providers are:
@@ -175,9 +175,9 @@ Available providers are:
 
 | Feature           | Value |
 | :---------------- | :------------------- |
-| Usage             | default (manually by calling `->setDriver(Gps::DRIVER_GOOGLE)`) |
+| Usage             | default (manually by calling `->setDriver(GpsPicker::DRIVER_GOOGLE)`) |
 | Search by address | yes |
-| Supported types   | `Gps::TYPE_ROADMAP`, `Gps::TYPE_SATELLITE`, `Gps::TYPE_HYBRID`, `Gps::TYPE_TERRAIN` |
+| Supported types   | `GpsPicker::TYPE_ROADMAP`, `GpsPicker::TYPE_SATELLITE`, `GpsPicker::TYPE_HYBRID`, `GpsPicker::TYPE_TERRAIN` |
 
 ```html
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
@@ -187,9 +187,9 @@ Available providers are:
 
 | Feature           | Value |
 | :---------------- | :------------------- |
-| Usage             | `->setDriver(Gps::DRIVER_NOKIA)` |
+| Usage             | `->setDriver(GpsPicker::DRIVER_NOKIA)` |
 | Search by address | no |
-| Supported types   | `Gps::TYPE_NORMAL`, `Gps::TYPE_SATELLITE`, `Gps::TYPE_TERRAIN` |
+| Supported types   | `GpsPicker::TYPE_NORMAL`, `GpsPicker::TYPE_SATELLITE`, `GpsPicker::TYPE_TERRAIN` |
 
 ```html
 <script src="http://api.maps.nokia.com/2.2.1/jsl.js?with=all" charset="utf-8"></script>
@@ -203,9 +203,9 @@ Available providers are:
 
 | Feature           | Value |
 | :---------------- | :------------------- |
-| Usage             | `->setDriver(Gps::DRIVER_OPENSTREETMAP)` |
+| Usage             | `->setDriver(GpsPicker::DRIVER_OPENSTREETMAP)` |
 | Search by address | no |
-| Supported types   | `Gps::TYPE_ROADMAP`, `Gps::TYPE_SATELLITE`, `Gps::TYPE_HYBRID`, `Gps::TYPE_TERRAIN` |
+| Supported types   | `GpsPicker::TYPE_ROADMAP`, `GpsPicker::TYPE_SATELLITE`, `GpsPicker::TYPE_HYBRID`, `GpsPicker::TYPE_TERRAIN` |
 
 ```html
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -215,9 +215,9 @@ Available providers are:
 
 | Feature           | Value |
 | :---------------- | :------------------- |
-| Usage             | `->setDriver(Gps::DRIVER_SEZNAM)` |
+| Usage             | `->setDriver(GpsPicker::DRIVER_SEZNAM)` |
 | Search by address | no |
-| Supported types   | `Gps::TYPE_BASE`, `Gps::TYPE_BIKE`, `Gps::TYPE_HISTORIC`, `Gps::TYPE_HYBRID`,<br>`Gps::TYPE_OPHOTO`, `Gps::TYPE_TRAIL`, `Gps::TYPE_TURIST` |
+| Supported types   | `GpsPicker::TYPE_BASE`, `GpsPicker::TYPE_BIKE`, `GpsPicker::TYPE_HISTORIC`, `GpsPicker::TYPE_HYBRID`,<br>`GpsPicker::TYPE_OPHOTO`, `GpsPicker::TYPE_TRAIL`, `GpsPicker::TYPE_TURIST` |
 
 ```html
 <script src="http://api4.mapy.cz/loader.js"></script>
