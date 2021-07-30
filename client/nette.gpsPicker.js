@@ -194,6 +194,7 @@ var drivers = {
 			}
 			map.addDefaultLayer(SMap['DEF_'+ options.type]).enable();
 			map.addDefaultControls();
+            map.addControl(new SMap.Control.Sync());
 			return map;
 		},
 		shapes: {
@@ -343,9 +344,11 @@ var GpsPicker = function () {
 	$(function () {
 		// Twitter Bootstrap
 		var rules = [
-			'[data-nette-gpspicker] img { max-width: none; }'
+			'[data-nette-gpspicker] img { max-width: none !important; }'
 		];
-		var stylesheet = window.document.styleSheets[0];
+        var stylesheet = document.createElement("style");
+        document.head.appendChild(stylesheet);
+        stylesheet = stylesheet.sheet;
 		var method = stylesheet.cssRules ? 'insertRule' : 'addRule';
 		for (var i = 0; i < rules.length; i++) {
 			stylesheet[method].call(stylesheet,	 rules[i], 0);
@@ -371,5 +374,9 @@ var GpsPicker = function () {
 };
 
 var GpsPicker = window.NetteGpsPicker = window.NetteGpsPicker || new GpsPicker();
-
+$.nette.ext('GpsPicker', {
+    success: function () {
+        GpsPicker.load();
+    }
+});
 })(window);
